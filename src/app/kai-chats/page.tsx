@@ -109,7 +109,7 @@ export default function KaiChatsDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-slate-200 font-sans pb-16 relative overflow-hidden selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans pb-16 relative overflow-hidden selection:bg-indigo-500/30">
       
       {/* Background Orbs */}
       <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none" />

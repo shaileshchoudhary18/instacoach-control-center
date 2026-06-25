@@ -12,7 +12,6 @@ const sections = [
   { name: "Video Repo", href: "/video-repo", icon: Video },
   { name: "Client Dashboard", href: "/clients", icon: Users },
   { name: "Onboarding", href: "/onboarding", icon: Users },
-  { name: "Paywall", href: "/paywall", icon: DollarSign },
   { name: "Promotions Control", href: "/promotions-control", icon: Award, active: true },
   { name: "Progress Analytics", href: "/analytics", icon: TrendingUp },
   { name: "Kai Chats", href: "/kai-chats", icon: MessageSquare },
@@ -35,7 +34,7 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <div className="min-h-full bg-[#050505] relative selection:bg-indigo-500/30 text-slate-200">
+    <div className="min-h-full bg-transparent relative selection:bg-indigo-500/30 text-slate-200">
       
       {/* Animated Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-600/10 blur-[120px] pointer-events-none" />

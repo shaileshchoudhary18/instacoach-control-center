@@ -23,7 +23,6 @@ const navigation = [
   { name: "Client Dashboard", href: "/clients", icon: Users },
   { name: "Onboarding", href: "/onboarding", icon: Users },
   { name: "Blake", href: "/blake", icon: Users },
-  { name: "Paywall", href: "/paywall", icon: DollarSign },
   { name: "Promotions control", href: "/promotions-control", icon: Award },
   { name: "Progress Analytics", href: "/analytics", icon: TrendingUp },
   { name: "Workout", href: "/workout", icon: Activity },

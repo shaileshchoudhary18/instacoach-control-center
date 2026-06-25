@@ -98,7 +98,7 @@ export default function PromotionsControl() {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <div className="min-h-full bg-[#050505] text-slate-200 p-6 lg:p-8 font-sans selection:bg-indigo-500/30">
+    <div className="min-h-full bg-transparent text-slate-200 p-6 lg:p-8 font-sans selection:bg-indigo-500/30">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
