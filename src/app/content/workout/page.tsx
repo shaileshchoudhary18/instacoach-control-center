@@ -193,7 +193,7 @@ export default function Workouts() {
                 <input type="number" defaultValue="1" className="w-full bg-[#0a0a0c] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-slate-300 focus:border-blue-500 outline-none transition-colors" />
               </div>
               <div>
-                <button className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-purple-500/20">
+                <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">
                   Submit
                 </button>
               </div>
@@ -202,9 +202,9 @@ export default function Workouts() {
             <div className="p-6">
               <h2 className="text-xl font-bold text-white mb-4">Workouts / Audio, Articles and Video</h2>
               <div className="flex gap-3 mb-6">
-                <button onClick={() => setIsReorderModalOpen(true)} className="bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors">Reorder</button>
-                <button onClick={() => setIsAddContentModalOpen(true)} className="bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors">Add Content</button>
-                <button onClick={() => setIsMapModalOpen(true)} className="bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors">Add/remove Workout</button>
+                <button onClick={() => setIsReorderModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold transition-colors">Reorder</button>
+                <button onClick={() => setIsAddContentModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold transition-colors">Add Content</button>
+                <button onClick={() => setIsMapModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold transition-colors">Add/remove Workout</button>
               </div>
               
               <div className="overflow-x-auto border border-white/5 rounded-xl">
@@ -230,7 +230,7 @@ export default function Workouts() {
                         <td className="p-4 text-blue-400 truncate max-w-[150px]">https://storage.googl...</td>
                         <td className="p-4"><button className="text-slate-500 hover:text-rose-400"><Trash2 className="w-4 h-4" /></button></td>
                         <td className="p-4">
-                          <button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">View</button>
+                          <button className="bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">View</button>
                         </td>
                       </tr>
                     ))}
@@ -259,7 +259,7 @@ export default function Workouts() {
               <button onClick={() => setIsMapModalOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-[#0a0a0c] border border-white/10 hover:bg-white/5 text-slate-300 hover:text-white rounded-lg text-sm font-semibold transition-all">
                 <Map className="w-4 h-4" /> Map Pre-defined Workout to Section
               </button>
-              <button onClick={() => setIsAddWorkoutModalOpen(true)} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-lg shadow-blue-500/20">
+              <button onClick={() => setIsAddWorkoutModalOpen(true)} className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
                 <Plus className="w-4 h-4" /> Add Pre-Defined Workout
               </button>
             </div>
@@ -303,7 +303,7 @@ export default function Workouts() {
                 <span className="bg-white/10 text-slate-300 text-xs font-bold px-2 py-0.5 rounded-full">64</span>
               </div>
             </div>
-            <button onClick={() => setIsAddContentModalOpen(true)} className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-lg shadow-blue-500/20">
+            <button onClick={() => setIsAddContentModalOpen(true)} className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
               <Plus className="w-4 h-4" /> Add Content
             </button>
           </div>
@@ -349,7 +349,7 @@ export default function Workouts() {
               <button onClick={() => setIsReorderModalOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-[#0a0a0c] border border-white/10 hover:bg-white/5 text-slate-300 hover:text-white rounded-lg text-sm font-semibold transition-all">
                 <ListOrdered className="w-4 h-4" /> Reorder category
               </button>
-              <button onClick={() => setIsAddCategoryModalOpen(true)} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-lg shadow-blue-500/20">
+              <button onClick={() => setIsAddCategoryModalOpen(true)} className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
                 <Plus className="w-4 h-4" /> Add category
               </button>
             </div>
@@ -401,7 +401,7 @@ export default function Workouts() {
             <option>Select an option</option>
           </select>
         </div>
-        <button onClick={() => setIsEditQuestionModalOpen(true)} className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20">
+        <button onClick={() => setIsEditQuestionModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold">
           Add Questions
         </button>
       </div>
@@ -481,7 +481,7 @@ export default function Workouts() {
                   <tr key={q.id} className="hover:bg-white/[0.02] transition-colors">
                     <td className="p-4">
                       <div className="flex items-center gap-3">
-                        <button onClick={() => setIsEditQuestionModalOpen(true)} className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1 rounded text-xs font-bold">Edit</button>
+                        <button onClick={() => setIsEditQuestionModalOpen(true)} className="bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 px-4 py-1 rounded text-xs font-bold">Edit</button>
                         <span className="text-slate-500 font-mono truncate w-32">{q.id}</span>
                       </div>
                     </td>
@@ -511,7 +511,7 @@ export default function Workouts() {
     <motion.div key="sectionBuilder" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-8">
       <ThemeCard>
         <div className="p-4 border-b border-white/5">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20">Add Focus Area</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold">Add Focus Area</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-300">
@@ -538,7 +538,7 @@ export default function Workouts() {
       <ThemeCard>
         <div className="p-4 flex justify-between items-center border-b border-white/5">
           <h2 className="text-xl font-bold text-white">Section Builder</h2>
-          <button onClick={() => setIsAddSectionModalOpen(true)} className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20">Add New Section</button>
+          <button onClick={() => setIsAddSectionModalOpen(true)} className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-6 py-2 rounded-lg text-sm font-bold">Add New Section</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-300">
@@ -558,13 +558,13 @@ export default function Workouts() {
               {sectionBuilderDrills.map((drill) => (
                 <tr key={drill.id} className="hover:bg-white/[0.02] transition-colors">
                   <td className="p-4 text-slate-500"><Edit className="w-4 h-4 cursor-pointer" /></td>
-                  <td className="p-4"><button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">View Drill</button></td>
+                  <td className="p-4"><button className="bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">View Drill</button></td>
                   <td className="p-4 text-white font-medium">{drill.title}</td>
                   <td className="p-4"><Pill colorTheme={drill.focus === "Hitting" ? "orange" : "blue"}>{drill.focus}</Pill></td>
                   <td className="p-4">{drill.subLevels && <Pill colorTheme="purple">{drill.subLevels}</Pill>}</td>
                   <td className="p-4 text-slate-400 text-xs">{drill.created}</td>
                   <td className="p-4 text-slate-400 text-xs">{drill.updated}</td>
-                  <td className="p-4"><button className="bg-rose-600 hover:bg-rose-500 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">Delete</button></td>
+                  <td className="p-4"><button className="bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 hover:border-rose-500/50 px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">Delete</button></td>
                 </tr>
               ))}
             </tbody>
@@ -638,7 +638,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 
@@ -665,7 +665,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 
@@ -713,7 +713,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-purple-500/20">Create</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Create</button>
         </div>
       </ModalContainer>
 
@@ -721,7 +721,7 @@ export default function Workouts() {
       <ModalContainer isOpen={isReorderModalOpen} onClose={() => setIsReorderModalOpen(false)} title="Reorder">
         <DraggableList items={activeCategoryView ? categoryWorkouts : categoriesData} />
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 
@@ -750,7 +750,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 
@@ -794,7 +794,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 
@@ -829,7 +829,7 @@ export default function Workouts() {
           </div>
         </div>
         <div className="mt-8 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-lg shadow-blue-500/20">Submit</button>
+          <button className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]  px-8 py-2.5 rounded-lg font-bold transition-colors">Submit</button>
         </div>
       </ModalContainer>
 

@@ -17,16 +17,11 @@ import {
 } from "lucide-react";
 
 const navigation = [
-  { name: "Home page", href: "/", icon: LayoutDashboard },
-  { name: "Programs", href: "/programs", icon: Activity },
-  { name: "Video Repo", href: "/video-repo", icon: Video },
-  { name: "Client Dashboard", href: "/clients", icon: Users },
-  { name: "Onboarding", href: "/onboarding", icon: Users },
-  { name: "Blake", href: "/blake", icon: Users },
-  { name: "Promotions control", href: "/promotions-control", icon: Award },
-  { name: "Progress Analytics", href: "/analytics", icon: TrendingUp },
-  { name: "Workout", href: "/workout", icon: Activity },
-  { name: "Kai Chats", href: "/kai-chats", icon: MessageSquare },
+  { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "Analytics", href: "/analytics", icon: TrendingUp },
+  { name: "Content & Programs", href: "/content", icon: Video },
+  { name: "Operations", href: "/operations", icon: Users },
+  { name: "AI Hub", href: "/ai", icon: MessageSquare },
   { name: "Configuration", href: "/config", icon: Settings },
 ];
 
@@ -42,7 +37,7 @@ export function Sidebar() {
       <div className="flex flex-1 flex-col overflow-y-auto px-4 py-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         <nav className="flex-1 space-y-1">
           {navigation.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.name}

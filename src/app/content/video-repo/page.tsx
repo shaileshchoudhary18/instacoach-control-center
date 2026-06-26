@@ -15,6 +15,7 @@ import {
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
+import { exportToCSV } from "@/lib/exportUtils";
 
 // --- DUMMY DATA ---
 
@@ -69,34 +70,6 @@ const ThemeCard = ({ children, className = "" }: { children: React.ReactNode, cl
 export default function VideoRepoDashboard() {
   return (
     <div className="min-h-screen bg-transparent text-slate-200 font-sans pb-16 relative overflow-hidden selection:bg-indigo-500/30">
-      
-      {/* Background Orbs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-[100px] pointer-events-none" />
-
-      {/* Top Header */}
-      <motion.div 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="sticky top-0 z-40 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 px-8 py-5 flex items-center"
-      >
-        <Link href="/">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button variant="ghost" size="icon" className="h-10 w-10 text-slate-400 hover:text-white mr-5 rounded-xl bg-[#0a0a0c] border border-white/5 hover:bg-white/5 transition-colors">
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-          </motion.div>
-        </Link>
-        <div className="flex-1">
-          <h1 className="text-2xl font-extrabold text-white tracking-tight flex items-center gap-3">
-            Video Repository
-            <div className="h-2 w-2 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
-          </h1>
-          <p className="text-sm font-medium text-slate-400 mt-0.5">Control Center / Video Content Management</p>
-        </div>
-      </motion.div>
-
       <div className="max-w-[1600px] mx-auto px-8 mt-10 space-y-16 relative z-10">
         
         {/* ================= GLOBAL FILTERS ================= */}
@@ -126,11 +99,11 @@ export default function VideoRepoDashboard() {
               <h2 className="text-2xl font-bold text-white tracking-wide">Drill Records Table</h2>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><ListPlus className="w-4 h-4 mr-2"/> Add new record</Button>
-              <Button className="bg-amber-600 hover:bg-amber-500 text-white rounded-xl shadow-lg border-0 font-semibold"><Edit2 className="w-4 h-4 mr-2"/> Bulk Update</Button>
-              <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><Download className="w-4 h-4 mr-2"/> Download All Data</Button>
-              <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><UploadCloud className="w-4 h-4 mr-2"/> Bulk upload drills</Button>
-              <Button className="bg-amber-600 hover:bg-amber-500 text-white rounded-xl shadow-lg border-0 font-semibold"><FileText className="w-4 h-4 mr-2"/> Add transcription to video</Button>
+              <Button variant="default"><ListPlus className="w-4 h-4 mr-2"/> Add new record</Button>
+              <Button variant="warning"><Edit2 className="w-4 h-4 mr-2"/> Bulk Update</Button>
+              <Button variant="default" onClick={() => exportToCSV(DRILL_RECORDS, "drill_records")}><Download className="w-4 h-4 mr-2"/> Download All Data</Button>
+              <Button variant="default"><UploadCloud className="w-4 h-4 mr-2"/> Bulk upload drills</Button>
+              <Button variant="warning"><FileText className="w-4 h-4 mr-2"/> Add transcription to video</Button>
             </div>
           </motion.div>
 
@@ -153,8 +126,8 @@ export default function VideoRepoDashboard() {
                     {DRILL_RECORDS.map((row, i) => (
                       <TableRow key={i} className="hover:bg-white/[0.02] border-0 transition-colors">
                         <TableCell className="pl-6 py-3 border-0 flex gap-2">
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white h-8 px-4 rounded-lg font-medium shadow-md">Edit</Button>
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white h-8 px-4 rounded-lg font-medium shadow-md">Content Versions</Button>
+                          <Button size="sm" variant="default">Edit</Button>
+                          <Button size="sm" variant="default">Content Versions</Button>
                         </TableCell>
                         <TableCell className="text-white font-medium border-0">{row.title}</TableCell>
                         <TableCell className="text-slate-300 border-0">{row.name}</TableCell>
@@ -205,8 +178,8 @@ export default function VideoRepoDashboard() {
                     {PROGRAM_DRILL_ASSIGNMENT.map((row, i) => (
                       <TableRow key={i} className="hover:bg-white/[0.02] border-0 transition-colors">
                         <TableCell className="pl-6 py-3 border-0 flex gap-2">
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white h-8 w-16 rounded-lg font-medium shadow-md">Edit</Button>
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white h-8 px-3 rounded-lg font-medium shadow-md">Go to Program</Button>
+                          <Button size="sm" variant="default" className="w-16">Edit</Button>
+                          <Button size="sm" variant="secondary">Go to Program</Button>
                         </TableCell>
                         <TableCell className="border-0">
                           <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30 px-2 py-1 truncate max-w-[150px] block">{row.title}</Badge>
@@ -250,10 +223,10 @@ export default function VideoRepoDashboard() {
                   <Select><SelectTrigger className="h-11 bg-[#050505] border-white/10 text-slate-300 rounded-xl"><SelectValue placeholder="Video URL title: Select an option" /></SelectTrigger><SelectContent/></Select>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <Button className="flex-1 bg-amber-600 hover:bg-amber-500 text-white rounded-xl shadow-lg border-0 font-semibold"><Edit2 className="w-4 h-4 mr-2"/> Bulk Update All Content Version</Button>
-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><ListPlus className="w-4 h-4 mr-2"/> Add Content Version</Button>
-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><Download className="w-4 h-4 mr-2"/> Download All Data</Button>
-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-lg border-0 font-semibold"><UploadCloud className="w-4 h-4 mr-2"/> Bulk Upload Content Versions</Button>
+                  <Button className="flex-1" variant="warning"><Edit2 className="w-4 h-4 mr-2"/> Bulk Update All Content Version</Button>
+                  <Button className="flex-1" variant="default"><ListPlus className="w-4 h-4 mr-2"/> Add Content Version</Button>
+                  <Button className="flex-1" variant="default" onClick={() => exportToCSV(CONTENT_VERSIONS, "content_versions")}><Download className="w-4 h-4 mr-2"/> Download All Data</Button>
+                  <Button className="flex-1" variant="default"><UploadCloud className="w-4 h-4 mr-2"/> Bulk Upload Content Versions</Button>
                 </div>
               </div>
               <div className="overflow-x-auto">
@@ -272,7 +245,7 @@ export default function VideoRepoDashboard() {
                     {CONTENT_VERSIONS.map((row, i) => (
                       <TableRow key={i} className="hover:bg-white/[0.02] border-0 transition-colors">
                         <TableCell className="pl-6 py-3 border-0">
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white h-8 w-16 rounded-lg font-medium shadow-md">Edit</Button>
+                          <Button size="sm" variant="default" className="w-16">Edit</Button>
                         </TableCell>
                         <TableCell className="text-slate-400 font-mono text-sm border-0">{row.id}</TableCell>
                         <TableCell className="text-white font-medium border-0">{row.name}</TableCell>
